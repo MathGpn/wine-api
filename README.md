@@ -1,8 +1,6 @@
 # wine-api
 
-<img src="assets/fastapi-logo.png" alt="fastapi-logo" width="300"/>
-
-<img src="assets/Scikit_learn_logo_small.svg.png" alt="sklearn-logo" width="300"/>
+<img src="assets/fastapi-logo.png" alt="fastapi-logo" width="300"/><img src="assets/Scikit_learn_logo_small.svg.png" alt="sklearn-logo" width="300"/>
 
 ## Overview
 
