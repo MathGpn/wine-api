@@ -21,15 +21,18 @@ pip install -r /path/to/requirements.txt
 ## Usage
 
 First of all, you have to launch the app :
+
 ```bash
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --port 8000
 ```
+
+If you want to change the port, you can change the 8000 value by the port you want.
+
 This command should create the local server on your computer with the app running on it.
 
 Then, to visualize and test all the endpoints and the API routes available, go to [http://localhost:8000/docs](http://localhost:8000/docs) and you should see the swagger page like this :
 
 ![swagger](./assets/swagger.png)
-
 
 You can also see a more detailled documentation at [http://localhost:8000/redoc](http://localhost:8000/redoc) like :
 

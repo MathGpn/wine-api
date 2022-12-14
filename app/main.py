@@ -4,7 +4,6 @@ from app.core.config import get_api_settings
 from app.routes.predict import PredictRouter
 from app.routes.model import ModelRouter
 
-
 settings = get_api_settings()
 TITLE = settings.title
 CONTACTS = settings.contacts
