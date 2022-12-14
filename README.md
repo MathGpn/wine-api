@@ -1,14 +1,15 @@
 # wine-api
 
-<img src="assets/fastapi-logo.png" alt="fastapi-logo" width="300"/><img src="assets/Scikit_learn_logo_small.svg.png" alt="sklearn-logo" width="300"/>
+<img src="assets/fastapi-logo.png" alt="fastapi-logo" width="300"/>
 
+<img src="assets/Scikit_learn_logo_small.svg.png" alt="sklearn-logo" width="300"/>
 
 ## Overview
 
 This is an AI-based project to determine which wine composition is the best.
 The dataset used for training the model is available in the [data](data/) directory of this git repository.
 
-This project use [FastAPI](https://fastapi.tiangolo.com/) framework to create the API which interact with the [scikit-learn](https://scikit-learn.org/stable/) AI-model 
+This project use [FastAPI](https://fastapi.tiangolo.com/) framework to create the API which interact with the [scikit-learn](https://scikit-learn.org/stable/) AI-model
 
 ## Installation
 
