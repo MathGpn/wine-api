@@ -39,7 +39,7 @@ You can also see a more detailled documentation at [http://localhost:8000/redoc]
 To build our model, we took the data from the csv file `Wines.csv` and deleted the unecessary "id" column. 
 
 ### Find the best wine
-To detect the components of the perfect wine, we have thinked about taking all the wines with the best quality (8) and simply calculate the mean of all their caracteristics to generate our perfect wine with a quality of 10.
+To detect the components of the perfect wine, we have thinked about taking all the wines with the best quality (8) and simply calculate the mean of all their caracteristics to generate our perfect wine with a quality of 10. Moreover, with some observations about feature importance, we noticed that the variables with the biggest weight for the quality prediction were : alcohol, sulphates and volatile acidity.
 
 
 ### Model
