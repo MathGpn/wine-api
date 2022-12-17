@@ -17,6 +17,50 @@ To install all the requirements, use the package manager [pip](https://pip.pypa.
 pip install -r /path/to/requirements.txt
 ```
 
+## File structure
+
+```
+|-- app
+|   |-- classes
+|   |   |-- __pycache__
+|   |   |   `-- models.cpython-38.pyc
+|   |   `-- models.py
+|   |-- core
+|   |   |-- __pycache__
+|   |   |   `-- config.cpython-38.pyc
+|   |   `-- config.py
+|   |-- models
+|   |   |-- metrics.json
+|   |   `-- model.pkl
+|   |-- __pycache__
+|   |   `-- main.cpython-38.pyc
+|   |-- routes
+|   |   |-- __pycache__
+|   |   |   |-- model.cpython-38.pyc
+|   |   |   `-- predict.cpython-38.pyc
+|   |   |-- model.py
+|   |   `-- predict.py
+|   |-- scripts
+|   |   |-- __pycache__
+|   |   |   |-- model_tools.cpython-38.pyc
+|   |   |   `-- predict_tools.cpython-38.pyc
+|   |   |-- model_tools.py
+|   |   `-- predict_tools.py
+|   `-- main.py
+|-- assets
+|   |-- fastapi-logo.png
+|   |-- redoc.png
+|   |-- Scikit_learn_logo_small.svg.png
+|   `-- swagger.png
+|-- data
+|   `-- Wines.csv
+|-- data-exploration
+|   `-- data_explo.ipynb
+|-- Dockerfile
+|-- README.md
+`-- requirements.txt
+```
+
 ## Usage
 
 First of all, you have to launch the app :
