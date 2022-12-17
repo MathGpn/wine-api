@@ -1,4 +1,5 @@
-# wine-api
+# Wine API
+## By Grosperrin Mathis and Mourareau Noa
 
 <img src="assets/fastapi-logo.png" alt="fastapi-logo" width="300"/><img src="assets/Scikit_learn_logo_small.svg.png" alt="sklearn-logo" width="300"/>
 
@@ -13,59 +14,10 @@ This project use [FastAPI](https://fastapi.tiangolo.com/) framework to create th
 
 To install all the requirements, use the package manager [pip](https://pip.pypa.io/en/stable/) and type this in your terminal.
 
-```bash
+## Launch the app
+```
+create your virtualenv
 pip install -r /path/to/requirements.txt
-```
-
-## File structure
-
-```
-|-- app
-|   |-- classes
-|   |   |-- __pycache__
-|   |   |   `-- models.cpython-38.pyc
-|   |   `-- models.py
-|   |-- core
-|   |   |-- __pycache__
-|   |   |   `-- config.cpython-38.pyc
-|   |   `-- config.py
-|   |-- models
-|   |   |-- metrics.json
-|   |   `-- model.pkl
-|   |-- __pycache__
-|   |   `-- main.cpython-38.pyc
-|   |-- routes
-|   |   |-- __pycache__
-|   |   |   |-- model.cpython-38.pyc
-|   |   |   `-- predict.cpython-38.pyc
-|   |   |-- model.py
-|   |   `-- predict.py
-|   |-- scripts
-|   |   |-- __pycache__
-|   |   |   |-- model_tools.cpython-38.pyc
-|   |   |   `-- predict_tools.cpython-38.pyc
-|   |   |-- model_tools.py
-|   |   `-- predict_tools.py
-|   `-- main.py
-|-- assets
-|   |-- fastapi-logo.png
-|   |-- redoc.png
-|   |-- Scikit_learn_logo_small.svg.png
-|   `-- swagger.png
-|-- data
-|   `-- Wines.csv
-|-- data-exploration
-|   `-- data_explo.ipynb
-|-- Dockerfile
-|-- README.md
-`-- requirements.txt
-```
-
-## Usage
-
-First of all, you have to launch the app :
-
-```bash
 uvicorn app.main:app --reload --port 8000
 ```
 
@@ -80,3 +32,63 @@ Then, to visualize and test all the endpoints and the API routes available, go t
 You can also see a more detailled documentation at [http://localhost:8000/redoc](http://localhost:8000/redoc) like :
 
 ![swagger](./assets/redoc.png)
+
+
+## Model construction
+### Dataset
+To build our model, we took the data from the csv file `Wines.csv` and deleted the unecessary "id" column. 
+
+### Find the best wine
+To detect the components of the perfect wine, we have thinked about taking all the wines with the best quality (8) and simply calculate the mean of all their caracteristics to generate our perfect wine with a quality of 10.
+
+
+### Model
+For the prediction we used the scikit learn module "SVC" that gave us better results than the Random Forest Classifier in terms of recall, F1 and precision score. In this data-exploration folder, you can find a notebook where we tried to find the best model and the optimal hyperparameters with "GridSearchCV" function.
+
+### Serialization
+We have already trained the model with a Support Vector Classifier. You can check the different metrics and hyperparameters that we used at the dedicated API route (GET /api/model/description). We have chosen the pickle module to keep the model encapsulated (serialized) after every retraining. The model persists on the disk so we don't need to train the model every time we launch the app.
+
+## Project Architecture
+### Description and technical choices
+
+We have chosen to separate the different routes (/routes), classes (/classes), configuration (/core), model informations and serialization (/models) and AI model construction files (/scripts) for better readability. You can see the architecture of the project below
+```
+wine-api
+│   README.md
+│   .gitignore
+│   requirements.txt
+└─── app
+│    │   main.py
+│    └─── classes
+│    │   │   models.py
+│    │ 
+│    └─── core
+│    │   │   config.py
+│    │ 
+│    └─── models
+│    │   │   metrics.json
+│    │   │   model.pkl
+│    │ 
+│    └─── routes
+│    │   │   model.py
+│    │   │   predict.py
+│    │ 
+│    └─── scripts
+│    │   │   model_tools.py
+│    │   │   predict_tools.py
+│    │   
+└─── assets
+│    │  Scikit_learn_logo_small.svg.png
+│    │  fastapi-logo.png
+│    │  redoc.png
+│    │  swagger.png
+│
+└─── data-exploration
+│    │  data_explo.ipynb
+│
+└─── data
+│    │  Wines.csv
+│
+```
+Check out the docstring documentation inside the different python files presented above to better understand the role of every code block.
+inside the differee to better understand the role of every code block.
