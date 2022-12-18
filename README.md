@@ -16,6 +16,7 @@ To install all the requirements, use the package manager [pip](https://pip.pypa.
 
 ## Launch the app
 ```
+unzip the file
 create your virtualenv
 pip install -r /path/to/requirements.txt
 uvicorn app.main:app --reload --port 8000
