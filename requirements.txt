@@ -6,4 +6,3 @@ pydantic
 scikit_learn
 seaborn
 matplotlib
-RandomForestClassifier
